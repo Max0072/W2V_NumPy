@@ -100,16 +100,21 @@ class ContinuousBagOfWords:
 
 
     def get_embedding(self, word):
+        word = word.lower()
+        if word not in self.word2id:
+            print("Haven't seen this word")
+            return None
         word_id = self.word2id[word]
         return self.W_in[word_id]
 
 
 def main():
-    model = ContinuousBagOfWords(300)
-    text = "..." # Fill the gap with you own text
+    model = ContinuousBagOfWords(100)
+    text = "..." # Fill the gap with you own tex
     model.fit(text)
     word = "..."  # Fill the gap with the real word
     word_embedding = model.get_embedding(word)
+    print(word_embedding)
 
 
 if __name__ == "__main__":
