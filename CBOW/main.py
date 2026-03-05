@@ -22,7 +22,7 @@ def build_pairs(token_ids, window):
     for i in range(n):
         context = []
         for j in range(i-window, i+window+1):
-            if 0 <= j < n and token_ids[j] != token_ids[i]:
+            if 0 <= j < n and j != i:
                 context.append(token_ids[j])
         if len(context) > 0:
             pairs.append((context, token_ids[i]))
@@ -119,5 +119,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
