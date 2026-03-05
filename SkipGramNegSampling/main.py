@@ -1,4 +1,6 @@
 import numpy as np
+from dataset import get_dataset_text
+
 
 def sigmoid(x):
     return 1.0 / (1.0 + np.exp(-np.clip(x, -500, 500)))
@@ -25,7 +27,6 @@ def build_pairs(token_ids, window):
         if len(context) > 0:
             pairs.append((token_ids[i], context))
     return pairs
-
 
 
 class SkipGram:
@@ -119,8 +120,8 @@ class SkipGram:
 
 
 def main():
-    model = SkipGram(100)
-    text = "..." # Fill the gap with you own text
+    model = SkipGram(emb_dim=100)
+    text = "..." # Fill the gap with your own text or use `get_dataset_text()`
     model.fit(text)
     word = "..."  # Fill the gap with the real word
     word_embedding = model.get_embedding(word)

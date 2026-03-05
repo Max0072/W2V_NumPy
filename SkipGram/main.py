@@ -1,4 +1,5 @@
 import numpy as np
+from dataset import get_dataset_text
 
 
 def softmax(x):
@@ -109,8 +110,8 @@ class SkipGram:
 
 
 def main():
-    model = SkipGram(100)
-    text = "..." # Fill the gap with you own text
+    model = SkipGram(emb_dim=100)
+    text = get_dataset_text()
     model.fit(text)
     word = "..."  # Fill the gap with the real word
     word_embedding = model.get_embedding(word)

@@ -1,5 +1,5 @@
 import numpy as np
-
+from dataset import get_dataset_text
 
 def softmax(x):
     ex = np.exp(x - np.max(x))
@@ -109,12 +109,11 @@ class ContinuousBagOfWords:
 
 
 def main():
-    model = ContinuousBagOfWords(100)
-    text = "..." # Fill the gap with you own tex
+    model = ContinuousBagOfWords(emb_dim=100)
+    text = "..." # Fill the gap with your own text or use `get_dataset_text()`
     model.fit(text)
     word = "..."  # Fill the gap with the real word
     word_embedding = model.get_embedding(word)
-    print(word_embedding)
 
 
 if __name__ == "__main__":
