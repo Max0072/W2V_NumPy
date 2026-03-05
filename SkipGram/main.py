@@ -111,7 +111,7 @@ class SkipGram:
 
 def main():
     model = SkipGram(emb_dim=100)
-    text = get_dataset_text()
+    text = "..." # Fill the gap with your own text or use `get_dataset_text()`
     model.fit(text)
     word = "..."  # Fill the gap with the real word
     word_embedding = model.get_embedding(word)
