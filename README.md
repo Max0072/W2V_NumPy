@@ -7,3 +7,7 @@ Implementation of Word2Vec models using only NumPy — no PyTorch, TensorFlow, o
 - CBOW -- Continuous Bag of Words with softmax
 - SkipGram -- Skip-gram with softmax
 - SkipGramNegSampling -- Skip-gram with Negative Sampling
+
+## Quick Start
+
+To start any of the training pipelines fill the gaps in the `main()` function of the file and then run the program
